@@ -16,19 +16,23 @@ use app\controllers\SectionControls;
     <title>Document</title>
 </head>
 <body>
-    <div class="container p-5">
-        <form method="post" action="./admin">
-            <div class="mb-3">
-                <label for="user" class="form-label">Usuário</label>
-                <input type="text" id="user" name="user" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Senha</label>
-                <input type="password" id="password" name="password" class="form-control" required>
-            </div>
-            <button type="submit" name="btn" class="btn btn-primary">Acessar</button>
-            <p><?php if(isset($mensagem)){echo $mensagem;}?></p>
-        </form>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="container p-5 bg-secondary col-12 col-sm-4 " style="color: #FFF;">
+            <form method="post" action="./admin">
+                <h5>Admin</h5>
+                <div class="mb-3">
+                    <label for="user" class="form-label">Usuário</label>
+                    <input type="text" id="user" name="user" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" name="btn" class="btn btn-primary">Acessar</button>
+                <p><?php if(isset($mensagem)){echo $mensagem;}?></p>
+            </form>
+        </div>
+
     </div>
 </body>
 </html>

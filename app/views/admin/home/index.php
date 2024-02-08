@@ -25,7 +25,6 @@
     <style>
     summary {
       list-style: none;
-      background-color: #777;
       color: #FFF;
       padding: 10px 20px;
       border: 1px solid #dee2e6;
@@ -53,7 +52,7 @@
                                 <input type="file" id="banner" name="bg" class="form-control">
                             </div>
                             <details class="mb-3">
-                                <summary>Parte 1</summary>
+                                <summary class="bg-secondary" >Apresentação</summary>
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Título</label>
                                     <input type="text" id="title" class="form-control" 
@@ -64,27 +63,45 @@
                                     <input type="text" id="description" class="form-control" 
                                     name="description1" value="<?=trim($r['description'])?>" required>
                                 </div>
+                                <details class="mb-3" >
+                                    <summary class="bg-primary">Lista material</summary>
+                                    <input type="text" class="form-control mb-2" 
+                                    name="list1" value="list1" required>
+                                    <input type="text" class="form-control mb-2" 
+                                    name="list2" value="list1" required>
+                                    <input type="text" class="form-control mb-2" 
+                                    name="list3" value="list1" required>
+                                    <input type="text" class="form-control mb-2" 
+                                    name="list4" value="list1" required>
+                                    <input type="text" class="form-control mb-2" 
+                                    name="list5" value="list1" required>
+                                    <input type="text" class="form-control mb-2" 
+                                    name="list6" value="list1" required>
+                                    <input type="text" class="form-control mb-2" 
+                                    name="list7" value="list1" required>
+
+                                </details>
                             </details>
                             <hr>
                             <details class="mb-3">
-                                <summary>Parte 2</summary>
+                                <summary class="bg-secondary">Formulário</summary>
                                 <div class="mb-3">
-                                    <label for="title-form" class="form-label">Título-Formulário</label>
+                                    <label for="title-form" class="form-label">Título</label>
                                     <input type="text" id="title-form" class="form-control" 
                                     value="<?=$r['title_form']?>" name="title_form" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="description-form" class="form-label">Descrição-Formulário</label>
+                                    <label for="description-form" class="form-label">Descrição</label>
                                     <input type="text" id="description-form" class="form-control" 
                                     value="<?=$r['description_form']?>"name="description_form" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="name-btn-form" class="form-label">Nome Botão Formulário</label>
+                                    <label for="name-btn-form" class="form-label">Nome botão</label>
                                     <input type="text" id="name-btn-form" class="form-control"
                                     value="<?=$r['name_btn_form']?>" name="name_btn_form" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="link-form" class="form-label">Link Formulário</label>
+                                    <label for="link-form" class="form-label">Link</label>
                                     <input type="url" id="link-form" class="form-control"
                                     value="<?=$r['link_form']?>" name="link_form" required>
                                 </div>
@@ -93,36 +110,36 @@
                         <section>
                             <h3 class="display-6">Seção 2</h3>
                             <details class="mb-3">
-                                <summary>Parte 1</summary>
+                                <summary class="bg-secondary">Apresentação</summary>
                                 <div class="mb-3">
                                     <label for="text-section-2" class="form-label">Descrição</label>
                                     <input type="text" id="text-section-2" class="form-control"
                                     value="<?=$r['description_two']?>" name="description_two" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="name-btn-one" class="form-label">Nome primeiro botão</label>
+                                    <label for="name-btn-one" class="form-label">Nome botão 1</label>
                                     <input type="text" id="name-btn-one" class="form-control"
                                     value="<?=$r['name_btn_one']?>" name="name_btn_one" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="link-btn-one" class="form-label">link primeiro botão</label>
+                                    <label for="link-btn-one" class="form-label">link botão 1</label>
                                     <input type="url" id="link-btn-one" class="form-control"
                                     value="<?=$r['link_btn_one']?>" name="link_btn_one" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="name-btn-two" class="form-label">Nome segundo botão</label>
+                                    <label for="name-btn-two" class="form-label">Nome botão 2</label>
                                     <input type="text" id="name-btn-two" class="form-control"
                                     value="<?=$r['name_btn_two']?>" name="name_btn_two" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="link-btn-two" class="form-label">link segundo botão</label>
+                                    <label for="link-btn-two" class="form-label">link botão 2</label>
                                     <input type="url" id="link-btn-two" class="form-control"
                                     value="<?=$r['link_btn_two']?>" name="link_btn_two" required>
                                 </div>
                             </details>
                             <hr>
                             <details class="mb-3">
-                                <summary>Parte 2</summary>
+                                <summary class="bg-secondary">Icons</summary>
                                 <div class="row">
                                     <div class="col-12 col-md-5 mb-3">
                                         <label for="icon1" class="form-label">Icone 1</label>

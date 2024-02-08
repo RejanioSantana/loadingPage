@@ -21,11 +21,11 @@ class DataController
     {
         
         self::movieFile();
-        // $db = new DataBase();
-        // $r = $db->updateDatas($array);
-        // if($r){
-            //     header("Location: ./paniel");
-            // };
+        $db = new DataBase();
+        $r = $db->updateDatas($array);
+        if($r){
+                header("Location: ./paniel");
+            };
     }
     private static function movieFile()
     {

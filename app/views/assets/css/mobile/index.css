@@ -1,0 +1,63 @@
+@media only screen and (max-width: 1024px){
+    .mainSections{
+        width: 100%;
+        height: auto;
+    }
+    .infoZone{
+        display: block;
+        width: 100%;
+    }
+    .description{
+        width: 75%;
+        margin: 0 auto;
+        padding: 5% 0;
+
+    }
+    .titleDescription, .pDescription{text-align: center;}
+    .content{ 
+        width: 50%;
+        margin: 0 auto;
+        padding: 5% 0;
+    }
+    .btnLink{
+        margin: auto;
+        margin-bottom: 2%;
+    }
+    .content.secondary{
+        position: relative;
+        display: flex;
+        margin: auto;
+        width: 90%;
+        height: 50vh;
+    }
+    .content.secondary .right,.left{
+    
+        display: block;
+        height: auto;
+        flex: 1;
+        flex-direction: column;   
+    }
+}
+@media only screen and (max-width:800px){.content{ width: 55%;}}
+@media only screen and (max-width:500px){
+    .description{width: 90%;}
+    .content{ width: 90%;}
+    .input-group{display: block;}
+    .input-group input{
+        width: 95%;
+        padding: 3% 2%;
+        margin-top: 4%;
+        }
+    .content.secondary{
+        position: relative;
+        display: block;
+        margin: auto;
+        width: 90%;
+    }
+    .content.secondary .right,.left{
+        display: block;
+        height: 100%;
+        flex: 0;
+        flex-direction: unset;   
+    }
+}

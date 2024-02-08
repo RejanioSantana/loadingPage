@@ -1,0 +1,154 @@
+@media only screen and (max-width: 1440px){
+    .infoZone{
+        display: flex;
+        width: 75%;
+        height: 90%;
+    }
+    .description, .content{ 
+        width: 38%;
+        margin: 0 auto;
+        padding: 5% 0;
+    }
+    .logo{font-size: 1.5em;margin-bottom: 5%;}
+    .titleDescription{font-size: 2.4em; margin-bottom: 5%;}
+    .pDescription{
+        font-size: 1.2em;
+        margin-bottom: 5%;
+    }
+
+    .listAttributes ul li{
+        margin-bottom: 3%;
+    }
+    .content label, p{
+        font-size: 1.15em;
+    }
+    .content form{
+        display: block;
+        margin: auto;
+        text-align: center;
+        background-color: #FFF;
+        color: #222;
+        padding: 4%;
+        border: none;
+        border-radius: 0.5em;
+    }
+    .infoForm{
+        position: relative;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 2vh;
+        font-size: 0.98em;
+    }
+    .infoForm p {
+        margin: auto;
+        width: 90%;
+        margin-top: 2%;
+        font-size: 0.98em;
+    }
+    .content label{
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5%;
+        font-weight: bold;
+        font-size: 1em;
+    }
+    .content input{
+        display: block;
+        width: 96%;
+        padding: 3% 2%;
+        margin-top: 3%;
+        border: 1px solid #53a753;
+        border-radius: 0.5em;
+    }
+    .input-group{
+        display: flex;
+        margin-top: 4%;
+        margin-bottom: 0%;
+        width: 100%;
+    }
+    .input-group input{
+        width: 89%;
+        margin: auto;
+        padding: 6% 2%;
+        margin-top: 4%;
+        }
+    .content button{
+        display: block;
+        background-color: #68bc68;
+        color: #FFF;
+        width:100%;
+        padding: 2.5% 1%;
+        margin-top: 4%;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .description.secondary{
+        font-size: 1.2em;
+        line-height: 1.8;
+    }
+    .description.secondary .textDescription{
+        margin-bottom: 15%;
+    }
+    
+    .btnLink{
+        width:85%;
+        padding: 2% 1%;
+        margin-top: 4%;
+        font-size: 0.9em;
+    }
+    /* Area para propríedade de tamanho dos icons */
+    .content.secondary{
+        width: 50%;
+        height: 68%;
+        padding: 0;
+        padding-top: 3%;
+        margin-left: 3%;
+        /* background-color: aqua; */
+   }
+    .content.secondary .right,.left{
+        width: 100%;
+        margin: 0%;  
+    }
+    .right div, .left div{
+        margin: auto;
+        width:98%;
+        height: 33%;    
+    }
+    .right img, .left img{
+        width: auto;
+        top:10%;
+        height: 55%;
+
+    }
+    .right div p, .left div p{
+        font-size: 0.8em;
+        width: 80%;
+        bottom: 0;
+        top: 75%;
+        
+    }
+}
+@media only screen and (max-width: 1280px){
+    .listAttributes ul li{font-size: 0.85em;}
+    .infoForm{font-size: 0.9em;}
+    .content label{margin-bottom: 5%;font-size: 0.9em;}
+    .btnLink{font-size: 0.7em;}
+}
+@media only screen and (max-width: 1100px){
+    .infoZone{width: 80%;}
+    .logo{font-size: 1.2em;}
+    .titleDescription{font-size: 2.2em;}
+    .pDescription{font-size: 1em;}
+    .listAttributes ul li{font-size: 0.85em;}
+    .infoForm{font-size: 0.8em;}
+    .content label{margin-bottom: 5%;font-size: 0.8em;}
+    .btnLink{font-size: 0.7em;}
+}
+@media only screen and (max-width: 1020px){
+    .infoZone{width: 90%;}
+}
+@media only screen and (max-width: 1030px){
+    .infoZone{width: 90%;}
+}

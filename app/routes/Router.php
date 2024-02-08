@@ -38,10 +38,13 @@ class Router
         return[
             'get' =>[
                 '/' => fn() => self::load('HomeController','index'),
-                '/admin' => fn() => self::load('ContactController','index'),
-
+                '/admin' => fn() => self::load('AdminController','index'),
+                '/paniel' => fn() => self::load('PanielController','index'),
+                
             ],
             'post' => [
+                '/admin' => fn() => self::load('AdminController','index'),
+                '/paniel' => fn() => self::load('PanielController','index'),
             ],
             'put' => [
 

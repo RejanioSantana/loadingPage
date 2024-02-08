@@ -15,7 +15,7 @@ class SectionControls
         self::start();
         self::set("user",$array[0]);
         self::set("password",$array[1]);
-        header("Location: admin/home/");
+        header("Location: ./paniel");
         exit();
 
     }
@@ -24,7 +24,7 @@ class SectionControls
         self::start();
         if (!isset($_SESSION['user']) && !isset($_SESSION['password'])) {
             self::destroy();
-            header("Location: ../index.php");
+            header("Location: ./admin");
             exit;
         }
     }

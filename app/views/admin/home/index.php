@@ -1,5 +1,4 @@
 <?php
-    require"../../../vendor/autoload.php";
     use app\controllers\SectionControls;
     use app\controllers\DataController;
 
@@ -9,18 +8,7 @@
         $datas = array();
         foreach ($_POST as $index => $value) 
         {
-            if($index == 'bg')
-            {
-                if(empty($value))
-                {
-                    $datas['bg'] = $r['background'];  
-                    continue;
-                }else
-                {
-                    $datas[$index] = $value;
-                    continue;
-                }
-            }
+            if($index == 'bg'){continue;}
             if($value == null){continue;}
             $datas[$index] = $value;
         }
@@ -36,13 +24,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container bg-dark">
         <div class="row">
-            <header class="col-12 bg-danger"><h1>Area Administrativa</h1></header>
-            <aside class="col-12 col-sm-3 bg-warning"><p>menu</p></aside>
-            <main class="col bg-faded">
+            <header class="col-12 ">
+                <h1 style= "color: #FFF; text-align:center;" >Ampliva</h1>
+            </header>
+            <main class="col-12 sm-10 mx-auto bg-light p-5">
                 <div class="container p-5">
-                    <form action="./" method="post">
+                    <form action="./paniel" method="post" enctype="multipart/form-data">
                         <section>
                             <h3 class="display-6">Seção 1</h3>
                             <div class="mb-3">

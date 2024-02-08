@@ -1,5 +1,4 @@
 <?php
-include "../../vendor/autoload.php";
 use app\controllers\SectionControls;
  if(isset($_POST['btn']))
  {
@@ -18,7 +17,7 @@ use app\controllers\SectionControls;
 </head>
 <body>
     <div class="container p-5">
-        <form method="post" action="./">
+        <form method="post" action="./admin">
             <div class="mb-3">
                 <label for="user" class="form-label">Usuário</label>
                 <input type="text" id="user" name="user" class="form-control" required>

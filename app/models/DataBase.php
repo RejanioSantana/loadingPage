@@ -49,7 +49,7 @@ class DataBase
         try
         {
             $stmt = $this->conn->prepare(
-                " UPDATE data SET background = :bg, 
+                " UPDATE data SET 
                 title = :title, description = :description1, 
                 title_form = :title_form, 
                 description_form = :description_form, 

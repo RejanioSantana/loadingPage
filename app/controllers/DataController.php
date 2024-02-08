@@ -30,11 +30,38 @@ class DataController
     private static function movieFile()
     {
         if($_FILES["bg"]["error"] == UPLOAD_ERR_OK){
-            $file = $_FILES["bg"];
-            $name = $_FILES["name"];
-            $tmp_name = $_FILES["tmp_name"];
+            $name = $_FILES["bg"]["name"];
+            $tmp_name = $_FILES["bg"]["tmp_name"];
             $extension = pathinfo($name,PATHINFO_EXTENSION);
             $newName = "background" .'.'. $extension;
+            move_uploaded_file($tmp_name,'assets/img/' . $newName);
+        }
+        if($_FILES["icon1"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon1"]["name"];
+            $tmp_name = $_FILES["icon1"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = "icon1" .'.'. $extension;
+            move_uploaded_file($tmp_name,'assets/img/' . $newName);
+        }
+        if($_FILES["icon2"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon2"]["name"];
+            $tmp_name = $_FILES["icon2"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = "icon2" .'.'. $extension;
+            move_uploaded_file($tmp_name,'assets/img/' . $newName);
+        }
+        if($_FILES["icon3"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon3"]["name"];
+            $tmp_name = $_FILES["icon3"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = "icon3" .'.'. $extension;
+            move_uploaded_file($tmp_name,'assets/img/' . $newName);
+        }
+        if($_FILES["icon4"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon4"]["name"];
+            $tmp_name = $_FILES["icon4"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = "icon4" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);
         }
     }

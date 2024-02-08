@@ -1,5 +1,4 @@
 <?php
-    require "../vendor/autoload.php";
     use app\controllers\DataController;
     $r = DataController::datas();
 ?>
@@ -16,7 +15,7 @@
 </head>
 <body>
     <div class="mainSections primary" 
-    style="background-image: url('./assets/img/banner6.jpg')">
+    style="background-image: url('./assets/img/background.jpg')">
         <div class="infoZone">
             <div class="description">
                 <div class="logo">Logo da Empresa</div>

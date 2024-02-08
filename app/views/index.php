@@ -101,32 +101,32 @@
             <div class="content secondary">
                 <div class="left">
                     <div >
-                        <img src="./assets/img/manager.png">
+                        <img src="./assets/img/icon1.png">
                         <p>Performance Hub</p>
                         
                     </div>
                     <div>
-                        <img src="./assets/img/loud-speaker.png">
+                        <img src="./assets/img/icon3.png">
                         <p>Personalization & Regionalization</p>
                     </div>
                     <div>
-                        <img src="./assets/img/creativity.png">
+                        <img src="./assets/img/icon5.png">
                         <p>Dynamic Creative Optimization</p>
 
                     </div>
                 </div>
                 <div class="right">
                     <div >
-                        <img src="./assets/img/folder.png">
+                        <img src="./assets/img/icon2.png">
                         <p>Data Engineering & Intelligence</p>
                         
                     </div>
                     <div>
-                        <img src="./assets/img/messaging.png">
+                        <img src="./assets/img/icon4.png">
                         <p>Click-to-WhatsApp Full Metrics</p>
                     </div>
                     <div>
-                        <img src="./assets/img/web-services.png">
+                        <img src="./assets/img/icon6.png">
                         <p>Tech Solutions</p>
 
                     </div>

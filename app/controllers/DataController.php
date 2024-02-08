@@ -64,5 +64,19 @@ class DataController
             $newName = "icon4" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);
         }
+        if($_FILES["icon5"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon5"]["name"];
+            $tmp_name = $_FILES["icon5"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = "icon5" .'.'. $extension;
+            move_uploaded_file($tmp_name,'assets/img/' . $newName);
+        }
+        if($_FILES["icon6"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon6"]["name"];
+            $tmp_name = $_FILES["icon6"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = "icon6" .'.'. $extension;
+            move_uploaded_file($tmp_name,'assets/img/' . $newName);
+        }
     }
 }

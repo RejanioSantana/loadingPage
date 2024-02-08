@@ -36,8 +36,7 @@
                             <h3 class="display-6">Seção 1</h3>
                             <div class="mb-3">
                                 <label for="banner" class="form-label">Background</label>
-                                <input type="file" id="banner" name="bg" 
-                                value="<?=$r['background']?>" class="form-control">
+                                <input type="file" id="banner" name="bg" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="title" class="form-label">Título</label>
@@ -100,7 +99,34 @@
                                 <input type="url" id="link-btn-two" class="form-control"
                                 value="<?=$r['link_btn_two']?>" name="link_btn_two" required>
                             </div>
-                            
+                            <hr>
+                            <div class="row">
+                                <div class="mb-3">
+                                    <label for="icon1" class="form-label">Icone 1</label>
+                                    <input type="file" id="icon1" name="icon1" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="icon2" class="form-label">Icone 2</label>
+                                    <input type="file" id="icon2" name="icon2" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="icon3" class="form-label">Icone 3</label>
+                                    <input type="file" id="icon3" name="icon3" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="icon4" class="form-label">Icone 4</label>
+                                    <input type="file" id="icon4" name="icon4" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="icon5" class="form-label">Icone 5</label>
+                                    <input type="file" id="icon5" name="icon5" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="icon6" class="form-label">Icone 6</label>
+                                    <input type="file" id="icon6" name="icon6" class="form-control">
+                                </div>
+
+                            </div>
 
                         </section>
                         <button type="submit" name="btn-update" class="btn btn-primary">Atualizar</button>

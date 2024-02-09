@@ -36,44 +36,44 @@ class DataController
             $newName = "background" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);
         }
-        if($_FILES["icon1"]["error"] == UPLOAD_ERR_OK){
-            $name = $_FILES["icon1"]["name"];
-            $tmp_name = $_FILES["icon1"]["tmp_name"];
+        if($_FILES["icon-1"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon-1"]["name"];
+            $tmp_name = $_FILES["icon-1"]["tmp_name"];
             $extension = pathinfo($name,PATHINFO_EXTENSION);
             $newName = "icon1" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);
         }
-        if($_FILES["icon2"]["error"] == UPLOAD_ERR_OK){
-            $name = $_FILES["icon2"]["name"];
-            $tmp_name = $_FILES["icon2"]["tmp_name"];
+        if($_FILES["icon-2"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon-2"]["name"];
+            $tmp_name = $_FILES["icon-2"]["tmp_name"];
             $extension = pathinfo($name,PATHINFO_EXTENSION);
             $newName = "icon2" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);
         }
-        if($_FILES["icon3"]["error"] == UPLOAD_ERR_OK){
-            $name = $_FILES["icon3"]["name"];
-            $tmp_name = $_FILES["icon3"]["tmp_name"];
+        if($_FILES["icon-3"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon-3"]["name"];
+            $tmp_name = $_FILES["icon-3"]["tmp_name"];
             $extension = pathinfo($name,PATHINFO_EXTENSION);
             $newName = "icon3" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);
         }
-        if($_FILES["icon4"]["error"] == UPLOAD_ERR_OK){
-            $name = $_FILES["icon4"]["name"];
-            $tmp_name = $_FILES["icon4"]["tmp_name"];
+        if($_FILES["icon-4"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon-4"]["name"];
+            $tmp_name = $_FILES["icon-4"]["tmp_name"];
             $extension = pathinfo($name,PATHINFO_EXTENSION);
             $newName = "icon4" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);
         }
-        if($_FILES["icon5"]["error"] == UPLOAD_ERR_OK){
-            $name = $_FILES["icon5"]["name"];
-            $tmp_name = $_FILES["icon5"]["tmp_name"];
+        if($_FILES["icon-5"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon-5"]["name"];
+            $tmp_name = $_FILES["icon-5"]["tmp_name"];
             $extension = pathinfo($name,PATHINFO_EXTENSION);
             $newName = "icon5" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);
         }
-        if($_FILES["icon6"]["error"] == UPLOAD_ERR_OK){
-            $name = $_FILES["icon6"]["name"];
-            $tmp_name = $_FILES["icon6"]["tmp_name"];
+        if($_FILES["icon-6"]["error"] == UPLOAD_ERR_OK){
+            $name = $_FILES["icon-6"]["name"];
+            $tmp_name = $_FILES["icon-6"]["tmp_name"];
             $extension = pathinfo($name,PATHINFO_EXTENSION);
             $newName = "icon6" .'.'. $extension;
             move_uploaded_file($tmp_name,'assets/img/' . $newName);

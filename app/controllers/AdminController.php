@@ -6,4 +6,8 @@ class AdminController extends Controller
     {
         $this->view('admin/index',['title' => 'BetQ']);
     }
+    public function store()
+    {
+        $this->view('admin/index',['title' => 'BetQ']);
+    }
 }

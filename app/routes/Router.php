@@ -43,7 +43,7 @@ class Router
                 
             ],
             'post' => [
-                '/admin' => fn() => self::load('AdminController','index'),
+                '/admin' => fn() => self::load('AdminController','store'),
                 '/paniel' => fn() => self::load('PanielController','index'),
             ],
             'put' => [

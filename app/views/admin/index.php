@@ -1,38 +1,42 @@
-<?php
-use app\controllers\SectionControls;
- if(isset($_POST['btn']))
- {
-    $mensagem = null;
-    $r = SectionControls::login([$_POST['user'],$_POST['password']]);
-    if($r == false){$mensagem = "Usuário ou senha inválido!";}
- }
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Document</title>
+
+    <title>INSPINIA | Login</title>
+
+    <link href="assets/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/admin/css/animate.css" rel="stylesheet">
+    <link href="assets/admin/css/style.css" rel="stylesheet">
+
 </head>
-<body>
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="container p-5 bg-secondary col-12 col-sm-4 " style="color: #FFF;">
-            <form method="post" action="./admin">
-                <h5>Admin</h5>
-                <div class="mb-3">
-                    <label for="user" class="form-label">Usuário</label>
-                    <input type="text" id="user" name="user" class="form-control" required>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name">AW</h1>
+            </div>
+            <h3>Painel administrativo</h3>
+            <p>Faça o login.</p>
+            <form class="m-t" role="form" action="/admin" method="post">
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Username" required="">
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Senha</label>
-                    <input type="password" id="password" name="password" class="form-control" required>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required="">
                 </div>
-                <button type="submit" name="btn" class="btn btn-primary">Acessar</button>
-                <p><?php if(isset($mensagem)){echo $mensagem;}?></p>
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
             </form>
         </div>
-
     </div>
+
+    <script src="assets/admin/js/jquery-2.1.1.js"></script>
+    <script src="assets/admin/js/bootstrap.min.js"></script>
+
 </body>
 </html>

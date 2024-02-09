@@ -59,7 +59,12 @@ class DataBase
                 name_btn_one = :name_btn_one, 
                 link_btn_one= :link_btn_one, 
                 name_btn_two = :name_btn_two, 
-                link_btn_two= :link_btn_two");
+                link_btn_two= :link_btn_two,
+                icon1 = :icon1, icon2 = :icon2, icon3 = :icon3, 
+                icon4 = :icon4, icon5 = :icon5, icon6 = :icon6, 
+                li1 = :li1, li2 = :li2, li3 = :li3, li4 = :li4, 
+                li5 = :li5, li6 = :li6, li7 = :li7, tli = :tli
+                ");
             foreach($array as $index => $value)
             {
             $stmt->bindValue(":$index",$value);

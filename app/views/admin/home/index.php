@@ -61,24 +61,32 @@
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Descrição</label>
                                     <input type="text" id="description" class="form-control" 
-                                    name="description1" value="<?=trim($r['description'])?>" required>
+                                    name="description1" value="<?=$r['description']?>" required>
                                 </div>
                                 <details class="mb-3" >
                                     <summary class="bg-primary">Lista material</summary>
+                                    <div class="mb-3">
+                                        <label for="tli" class="form-label">Título</label>
+                                        <input type="text" id="tli" class="form-control" 
+                                        name="tli" value="<?=$r['tli']?>" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label >Informação</label>
+                                    </div>
                                     <input type="text" class="form-control mb-2" 
-                                    name="list1" value="list1" required>
+                                    name="li1" value="<?=$r['li1']?>" required>
                                     <input type="text" class="form-control mb-2" 
-                                    name="list2" value="list1" required>
+                                    name="li2" value="<?=$r['li2']?>" required>
                                     <input type="text" class="form-control mb-2" 
-                                    name="list3" value="list1" required>
+                                    name="li3" value="<?=$r['li3']?>" required>
                                     <input type="text" class="form-control mb-2" 
-                                    name="list4" value="list1" required>
+                                    name="li4" value="<?=$r['li4']?>" required>
                                     <input type="text" class="form-control mb-2" 
-                                    name="list5" value="list1" required>
+                                    name="li5" value="<?=$r['li5']?>" required>
                                     <input type="text" class="form-control mb-2" 
-                                    name="list6" value="list1" required>
+                                    name="li6" value="<?=$r['li6']?>" required>
                                     <input type="text" class="form-control mb-2" 
-                                    name="list7" value="list1" required>
+                                    name="li7" value="<?=$r['li7']?>" required>
 
                                 </details>
                             </details>
@@ -143,33 +151,33 @@
                                 <div class="row">
                                     <div class="col-12 col-md-5 mb-3">
                                         <label for="icon1" class="form-label">Icone 1</label>
-                                        <input type="file" id="icon1" name="icon1" class="form-control">
-                                        <input type="text" name="icon1" placeholder="Descrição..." class="form-control">
+                                        <input type="file" id="icon1" name="icon-1" class="form-control">
+                                        <input type="text" name="icon1" value="<?=$r['icon1']?>" class="form-control">
                                     </div>
                                     <div class="col-12 col-md-5 mb-3">
                                         <label for="icon2" class="form-label">Icone 2</label>
-                                        <input type="file" id="icon2" name="icon2" class="form-control">
-                                        <input type="text" name="icon1" placeholder="Descrição..." class="form-control">
+                                        <input type="file" id="icon2" name="icon-2" class="form-control">
+                                        <input type="text" name="icon2" value="<?=$r['icon2']?>" class="form-control">
                                     </div>
                                     <div class="col-12 col-md-5 mb-3">
                                         <label for="icon3" class="form-label">Icone 3</label>
-                                        <input type="file" id="icon3" name="icon3" class="form-control">
-                                        <input type="text" name="icon1" placeholder="Descrição..." class="form-control">
+                                        <input type="file" id="icon3" name="icon-3" class="form-control">
+                                        <input type="text" name="icon3" value="<?=$r['icon3']?>" class="form-control">
                                     </div>
                                     <div class="col-12 col-md-5 mb-3">
                                         <label for="icon4" class="form-label">Icone 4</label>
-                                        <input type="file" id="icon4" name="icon4" class="form-control">
-                                        <input type="text" name="icon1" placeholder="Descrição..." class="form-control">
+                                        <input type="file" id="icon4" name="icon-4" class="form-control">
+                                        <input type="text" name="icon4" value="<?=$r['icon4']?>" class="form-control">
                                     </div>
                                     <div class="col-12 col-md-5 mb-3">
                                         <label for="icon5" class="form-label">Icone 5</label>
-                                        <input type="file" id="icon5" name="icon5" class="form-control">
-                                        <input type="text" name="icon1" placeholder="Descrição..." class="form-control">
+                                        <input type="file" id="icon5" name="icon-5" class="form-control">
+                                        <input type="text" name="icon5" value="<?=$r['icon5']?>" class="form-control">
                                     </div>
                                     <div class="col-12 col-md-5 mb-3">
                                         <label for="icon6" class="form-label">Icone 6</label>
-                                        <input type="file" id="icon6" name="icon6" class="form-control">
-                                        <input type="text" name="icon1" placeholder="Descrição..." class="form-control">
+                                        <input type="file" id="icon6" name="icon-6" class="form-control">
+                                        <input type="text" name="icon6" value="<?=$r['icon6']?>" class="form-control">
                                     </div>
     
                                 </div>

@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="mainSections primary" 
-    style="background-image: url('./assets/img/background.jpg')">
+        style="background-image: url('./assets/img/background.jpg')">
         <div class="infoZone">
             <div class="description">
                 <div class="logo">Logo da Empresa</div>
@@ -31,33 +31,34 @@
                 <div class="listAttributes">
                     <h5>
                         <span class="material-symbols-outlined">
-                        content_paste</span> No material você encontrará:</h5>
+                        content_paste</span> <?=$r["tli"]?></h5>
                     <ul>
                         <li><span class="iconLosango">&#x25C6;</span> 
-                            Nacimento dos cookies</li>
-                        <li>
-                            <span class="iconLosango">&#x25C6;</span>
-                            Tipos de cookies
+                            <?=$r["li1"]?>
                         </li>
                         <li>
                             <span class="iconLosango">&#x25C6;</span>
-                            Casos de uso na publicidade
+                            <?=$r["li2"]?>
                         </li>
                         <li>
                             <span class="iconLosango">&#x25C6;</span>
-                            Debates sobre privacidade
+                            <?=$r["li3"]?>
                         </li>
                         <li>
                             <span class="iconLosango">&#x25C6;</span>
-                            Fim dos cookies
+                            <?=$r["li4"]?>
                         </li>
                         <li>
                             <span class="iconLosango">&#x25C6;</span>
-                            Como Google e Meta estão se preparando
+                            <?=$r["li5"]?>
                         </li>
                         <li>
                             <span class="iconLosango">&#x25C6;</span>
-                            Tendências de marketing da nova era cookieless
+                            <?=$r["li6"]?>
+                        </li>
+                        <li>
+                            <span class="iconLosango">&#x25C6;</span>
+                            <?=$r["li7"]?>
                         </li>
                     </ul>
                 </div>
@@ -102,32 +103,32 @@
                 <div class="left">
                     <div >
                         <img src="./assets/img/icon1.png">
-                        <p>Performance Hub</p>
+                        <p><?=$r["icon1"]?></p>
                         
                     </div>
                     <div>
                         <img src="./assets/img/icon3.png">
-                        <p>Personalization & Regionalization</p>
+                        <p><?=$r["icon3"]?></p>
                     </div>
                     <div>
                         <img src="./assets/img/icon5.png">
-                        <p>Dynamic Creative Optimization</p>
+                        <p><?=$r["icon5"]?></p>
 
                     </div>
                 </div>
                 <div class="right">
                     <div >
                         <img src="./assets/img/icon2.png">
-                        <p>Data Engineering & Intelligence</p>
+                        <p><?=$r["icon2"]?></p>
                         
                     </div>
                     <div>
                         <img src="./assets/img/icon4.png">
-                        <p>Click-to-WhatsApp Full Metrics</p>
+                        <p><?=$r["icon4"]?></p>
                     </div>
                     <div>
                         <img src="./assets/img/icon6.png">
-                        <p>Tech Solutions</p>
+                        <p><?=$r["icon6"]?></p>
 
                     </div>
                 </div>

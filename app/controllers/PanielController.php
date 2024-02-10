@@ -4,6 +4,7 @@ class PanielController extends Controller
 {
     public function index()
     {
-        $this->view('admin/home/index',['title' => 'BetQ']);
+        SectionControls::section();
+        $this->view('admin/paniel',['title' => 'BetQ']);
     }
 }

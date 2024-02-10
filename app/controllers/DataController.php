@@ -10,12 +10,11 @@ class DataController
         $r = $bd->query("SELECT * FROM data");
         return $r ;
     }
-    public static function login(array $array)
+    public static function login($email)
     {
         $bd = new DataBase();
-        $r = $bd->queryParam(
-            "SELECT * FROM users WHERE user = ? and password = ?",$array);
-        return $r;
+        $datas =  $bd->datasAdmin($email);
+        return $datas;
     }
     public static function datasUpadate(array $array)
     {

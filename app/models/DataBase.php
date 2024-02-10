@@ -30,6 +30,21 @@ class DataBase
         }
     }
 
+    public function datasAdmin(string $email)
+    {   
+        try{
+            $sql = "SELECT * FROM administrador WHERE email = :email ";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':email',$email);
+            $stmt->execute();
+            $resp = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $resp;
+
+        }catch(Exception){
+            return false;
+        }
+    }
+
     public function query($sql)
     {
         $stmt = $this->conn->prepare($sql);

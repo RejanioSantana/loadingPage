@@ -40,6 +40,7 @@ class Router
                 '/' => fn() => self::load('HomeController','index'),
                 '/admin' => fn() => self::load('AdminController','index'),
                 '/paniel' => fn() => self::load('PanielController','index'),
+                '/adminSectionOne' => fn() => self::load('admin\\AdminSectionOne','index'),
                 
             ],
             'post' => [

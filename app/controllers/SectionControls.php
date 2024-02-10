@@ -22,7 +22,7 @@ class SectionControls
     public static function section()
     {
         self::start();
-        if (!isset($_SESSION['user']) && !isset($_SESSION['password'])) {
+        if (!isset($_SESSION['dados'])) {
             self::destroy();
             header("Location: ./admin");
             exit;
@@ -30,6 +30,7 @@ class SectionControls
     }
     public static function start() {
         if (session_status() == PHP_SESSION_NONE) {
+            session_set_cookie_params(['httponly' => true]);
             session_start();
         }
     }

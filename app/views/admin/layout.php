@@ -8,7 +8,8 @@
 
     <link href="assets/admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/admin/font-awesome/css/font-awesome.css" rel="stylesheet">
-
+    <link href="assets/admin/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="assets/admin/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
     <link href="assets/admin/css/animate.css" rel="stylesheet">
     <link href="assets/admin/css/style.css" rel="stylesheet">
 
@@ -83,6 +84,22 @@
 
     <!-- Sparkline demo data  -->
     <script src="assets/admin/js/demo/sparkline-demo.js"></script>
+    <!-- SUMMERNOTE -->
+    <script src="assets/admin/js/plugins/summernote/summernote.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('.summernote').summernote();
+
+       });
+        var edit = function() {
+            $('.click2edit').summernote({focus: true});
+        };
+        var save = function() {
+            var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
+            $('.click2edit').destroy();
+        };
+    </script>
 </body>
 
 <!-- Mirrored from webapplayers.com/inspinia_admin-v2.3/dashboard_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Sep 2015 13:12:28 GMT -->

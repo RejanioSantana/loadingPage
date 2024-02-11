@@ -65,29 +65,58 @@ class DataBase
         {
             $stmt = $this->conn->prepare(
                 " UPDATE data SET 
-                title = :title, description = :description1, 
-                title_form = :title_form, 
-                description_form = :description_form, 
-                name_btn_form = :name_btn_form, 
-                link_form = :link_form, 
-                description_two = :description_two, 
+                meta_title = :meta_title, 
+                meta_description = :meta_description, 
+                meta_keywords = :meta_keywords, 
                 name_btn_one = :name_btn_one, 
-                link_btn_one= :link_btn_one, 
-                name_btn_two = :name_btn_two, 
-                link_btn_two= :link_btn_two,
-                icon1 = :icon1, icon2 = :icon2, icon3 = :icon3, 
-                icon4 = :icon4, icon5 = :icon5, icon6 = :icon6, 
-                li1 = :li1, li2 = :li2, li3 = :li3, li4 = :li4, 
-                li5 = :li5, li6 = :li6, li7 = :li7, tli = :tli
-                ");
-            foreach($array as $index => $value)
-            {
-            $stmt->bindValue(":$index",$value);
+                link_btn_one = :url_btn_one, 
+                name_btn_two = :name_btn_two,
+                link_btn_two = :url_btn_two, 
+                name_btn_form = :name_btn_form, 
+                link_form = :url_btn_form
+                "); 
+                foreach($array as $index => $value){
+                switch ($index) {
+                    case 'meta_title':
+                        $stmt->bindValue(":$index",$value);
+                    case 'meta_description':
+                        $stmt->bindValue(":$index",$value);
+                    case 'meta_keywords':
+                        $stmt->bindValue(":$index",$value);
+                    case 'name_btn_one':
+                        $stmt->bindValue(":$index",$value);
+                    case 'url_btn_one':
+                        $stmt->bindValue(":$index",$value);
+                    case 'name_btn_two':
+                        $stmt->bindValue(":$index",$value);
+                    case 'url_btn_two':
+                        $stmt->bindValue(":$index",$value);
+                    case 'name_btn_form':
+                        $stmt->bindValue(":$index",$value);
+                    case 'url_btn_form':
+                        $stmt->bindValue(":$index",$value);
+                       
+                }
             }
-
+            $stmt->execute();
+            $stmt = $this->conn->prepare(
+                "UPDATE texts SET text_one = :description1, text_two = :description2, text_form = :form_description");
+            foreach($array as $index => $value){
+                switch ($index) {
+                    case 'description1':
+                        $stmt->bindValue(":$index",$value);
+                    case 'description2':
+                        $stmt->bindValue(":$index",$value);
+                    case 'form_description':
+                        $stmt->bindValue(":$index",$value);
+                       
+                }
+            }
+                
             $stmt->execute();
             return true;
-        } catch (Exception) {
+        } catch (Exception  $e) {
+            echo($e->getMessage());
             return false;
         }
        

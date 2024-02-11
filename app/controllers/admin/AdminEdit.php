@@ -2,6 +2,7 @@
 namespace app\controllers\admin;
 
 use app\controllers\Controller;
+use app\controllers\DataController;
 
 class AdminEdit extends Controller
 {
@@ -11,6 +12,7 @@ class AdminEdit extends Controller
     }
     public function store()
     {
-        var_dump($_POST);
+        // var_dump($_POST);
+        DataController::datasUpadate();
     }
 }

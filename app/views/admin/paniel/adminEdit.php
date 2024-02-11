@@ -14,13 +14,13 @@
 
                                         <fieldset class="form-horizontal">
                                             <div class="form-group"><label class="col-sm-2 control-label">Meta Tag Title:</label>
-                                                <div class="col-sm-10"><input type="text" name="meta-title" class="form-control" placeholder="..."></div>
+                                                <div class="col-sm-10"><input type="text" name="meta_title" class="form-control" placeholder="..."></div>
                                             </div>
                                             <div class="form-group"><label class="col-sm-2 control-label">Meta Tag Description:</label>
-                                                <div class="col-sm-10"><input type="text" name="meta-description" class="form-control" placeholder="Sheets containing Lorem"></div>
+                                                <div class="col-sm-10"><input type="text" name="meta_description" class="form-control" placeholder="Sheets containing Lorem"></div>
                                             </div>
                                             <div class="form-group"><label class="col-sm-2 control-label">Meta Tag Keywords:</label>
-                                                <div class="col-sm-10"><input type="text" name="meta-keywords" class="form-control" placeholder="Lorem, Ipsum, has, been"></div>
+                                                <div class="col-sm-10"><input type="text" name="meta_keywords" class="form-control" placeholder="Lorem, Ipsum, has, been"></div>
                                             </div>
                                             <h3>Parte 1</h3>
                                             <div class="form-group"><label class="col-sm-2 control-label">Descrição 1:</label>
@@ -75,7 +75,7 @@
                                         <fieldset class="form-horizontal">
                                         <div class="form-group"><label class="col-sm-2 control-label">Descrição:</label>
                                                 <div class="col-sm-10">
-                                                    <textarea name="form-description" class="summernote">
+                                                    <textarea name="form_description" class="summernote">
                                                         <h3>Lorem Ipsum is simply</h3>
                                                         dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
                                                         when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic

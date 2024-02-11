@@ -16,15 +16,17 @@ class DataController
         $datas =  $bd->datasAdmin($email);
         return $datas;
     }
-    public static function datasUpadate(array $array)
+    public static function datasUpadate()
     {
-        
-        self::movieFile();
+        $array = $_POST;
+        // self::movieFile();
+
         $db = new DataBase();
         $r = $db->updateDatas($array);
-        if($r){
-                header("Location: ./paniel");
-            };
+        // if($r){
+        //         header("Location: ./paniel");
+        //         exit;
+        //     };
     }
     private static function movieFile()
     {

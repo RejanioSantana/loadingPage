@@ -12,6 +12,8 @@
     <link href="assets/admin/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
     <link href="assets/admin/css/animate.css" rel="stylesheet">
     <link href="assets/admin/css/style.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="assets/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
 
 </head>
 
@@ -86,7 +88,30 @@
     <script src="assets/admin/js/demo/sparkline-demo.js"></script>
     <!-- SUMMERNOTE -->
     <script src="assets/admin/js/plugins/summernote/summernote.min.js"></script>
+    
+    <!-- Sweet alert -->
+    <script src="assets/admin/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
+        document.addEventListener('submit',e =>e.preventDefault());
+        $('.demo3').click(function () {
+            swal({
+                title: "Tem certeza?",
+                text: "Os arquivos antigos não poderá ser recuperado!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Sim, atualizar!",
+                closeOnConfirm: false
+            }, function () {
+                swal("Atualizado!", "Arquivos atualizados com sucesso.", "success");
+                setTimeout(function (){
+                    console.log("Entrei")
+                    var form = document.querySelector(".form-update");
+                    form.submit()
+
+                },3000)
+            })         
+        });
         $(document).ready(function(){
 
             $('.summernote').summernote();

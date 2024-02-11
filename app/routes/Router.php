@@ -40,12 +40,12 @@ class Router
                 '/' => fn() => self::load('HomeController','index'),
                 '/admin' => fn() => self::load('AdminController','index'),
                 '/paniel' => fn() => self::load('PanielController','index'),
-                '/adminSectionOne' => fn() => self::load('admin\\AdminSectionOne','index'),
+                '/adminEdit' => fn() => self::load('admin\\AdminEdit','index'),
                 
             ],
             'post' => [
                 '/admin' => fn() => self::load('AdminController','store'),
-                '/paniel' => fn() => self::load('PanielController','index'),
+                '/adminEdit' => fn() => self::load('admin\\AdminEdit','store'),
             ],
             'put' => [
 

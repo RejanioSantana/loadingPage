@@ -18,8 +18,7 @@
             <ul class="nav nav-second-level">
                 <li><a href="index-2.html">Email</a></li>
                 <li><a href="index-2.html">Banner</a></li>
-                <li><a href="/adminSectionOne">Seção 1</a></li>
-                <li><a href="index-2.html">Seção 2</a></li>
+                <li><a href="/adminEdit">Editar Pagina</a></li>
             </ul>
         </li>
         <li class="">

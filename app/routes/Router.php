@@ -46,6 +46,7 @@ class Router
             'post' => [
                 '/admin' => fn() => self::load('AdminController','store'),
                 '/adminEdit' => fn() => self::load('admin\\AdminEdit','store'),
+                '/uploadIcon' => fn() => self::load('admin\\UploadIcon','store'),
             ],
             'put' => [
 

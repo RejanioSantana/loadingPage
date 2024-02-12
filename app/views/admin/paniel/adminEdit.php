@@ -4,9 +4,9 @@
     // var_dump($datas);
 ?>
 <div class="row">
-    <form action="" class="form-update" method="post">
+    
                 <div class="col-lg-12">
-                    <div class="tabs-container">
+                        <div class="tabs-container">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#tab-1"> Informações</a></li>
                                 <li class=""><a data-toggle="tab" href="#tab-2">Formulário</a></li>
@@ -14,6 +14,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div id="tab-1" class="tab-pane active">
+                                <form action="/adminEdit" class="form-update" method="post">
                                     <div class="panel-body">
 
                                         <fieldset class="form-horizontal">
@@ -82,6 +83,7 @@
                                         <div class="col-lg-6 h-100 p-lg"><button class="btn btn-warning btn-sm demo3" type="menu">Atualizar</button></div>
                                     </div>
                                 </div>
+                                </form>
                                 <div id="tab-4" class="tab-pane">
                                     <div class="panel-body">
                                         <div class="table-responsive">
@@ -130,14 +132,16 @@
                                             <i class="fa fa-laptop modal-icon"></i>
                                             <h4 class="modal-title">Icones</h4>
                                         </div>
+                                        <form action="/uploadIcon" class=".form-2" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
-                                            <div class="form-group"><label>Selecione o icone</label> <input type="file" name="new_icone" placeholder="Enter your email" class="form-control"></div>
+                                            <div class="form-group"><label>Selecione o icone</label> <input type="file" name="new_icone"  class="form-control"></div>
                                             <div class="form-group"><label>Descrição:</label> <input type="text" name="name_icone" placeholder="Digite o nome que aparecerá abaixo do icone... " class="form-control"></div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-white" data-dismiss="modal">Voltar</button>
-                                            <button type="button" class="btn btn-primary">Salvar</button>
+                                            <input type="submit" class="btn btn-primary salve-icon" value="Salvar">
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -148,6 +152,6 @@
                             </div>
                     </div>
                 </div>
-            </form>
+            
 
             </div>

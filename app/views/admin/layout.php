@@ -92,7 +92,11 @@
     <!-- Sweet alert -->
     <script src="assets/admin/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
-        document.addEventListener('submit',e =>e.preventDefault());
+        var form = document.querySelector(".form-update");
+        form.addEventListener('submit',e =>{
+            e.preventDefault();
+            
+        });
         $('.demo3').click(function () {
             swal({
                 title: "Tem certeza?",
@@ -105,11 +109,9 @@
             }, function () {
                 swal("Atualizado!", "Arquivos atualizados com sucesso.", "success");
                 setTimeout(function (){
-                    console.log("Entrei")
                     var form = document.querySelector(".form-update");
                     form.submit()
-
-                },3000)
+                },2000)
             })         
         });
         $(document).ready(function(){

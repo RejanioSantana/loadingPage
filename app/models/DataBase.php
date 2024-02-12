@@ -45,6 +45,23 @@ class DataBase
         }
     }
 
+    public function insertIcon($local,$name)
+    {
+        try{
+            $stmt = $this->conn->prepare("
+            INSERT INTO icone (url,name) VALUES (:local,:name)");
+            
+            $stmt->bindValue(":local",$local);
+            $stmt->bindValue(":name",$name);
+            $response = $stmt->execute();
+            
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
     public function datas()
     {
         try{

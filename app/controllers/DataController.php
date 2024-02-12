@@ -52,14 +52,22 @@ class DataController
 
         }
     }
-    private static function movieFile()
+    public static function delIcon($id)
     {
-        // if($_FILES["bg"]["error"] == UPLOAD_ERR_OK){
-        //     $name = $_FILES["bg"]["name"];
-        //     $tmp_name = $_FILES["bg"]["tmp_name"];
-        //     $extension = pathinfo($name,PATHINFO_EXTENSION);
-        //     $newName = "background" .'.'. $extension;
-        //     move_uploaded_file($tmp_name,'assets/img/' . $newName);
-        // }
+            $f = new DataBase();
+            $local = $f->locationIcon($id);
+            if(file_exists($local['url'])){
+                $result = unlink($local['url']);
+                if($result){
+                    $result = $f->delIcon($id);
+                    if($result){
+                        Redirect::to('adminEdit');
+                        exit;
+                    }
+                }
+            }
+            Redirect::to('adminEdit');
+            exit;
     }
+
 }

@@ -1,7 +1,7 @@
 <?php
 
     $this->layout('admin/layout', ['title' => $title]); 
-    // var_dump($datas);
+                                                    
 ?>
 <div class="row">
     
@@ -103,17 +103,21 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <img src="img/gallery/2s.jpg">
-                                                    </td>
-                                                    <td>
-                                                        Exemplo Nome
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
-                                                    </td>
-                                                </tr>
+                                                    <?php
+                                                    foreach($datas[2] as $index){
+                                                        echo"<tr>";
+                                                        echo"<td>";
+                                                        echo"<img src=\"".$index['url']."\" height=\"50\">";
+                                                        echo"</td>";
+                                                        echo"<td>";
+                                                        echo($index['name']);
+                                                        echo"</td>";
+                                                        echo"<td>";
+                                                        echo"<button class=\"btn btn-white\"><a href=\"/delIcon?idicone=".$index['idicone']."\"><i class=\"fa fa-trash\"></i></a> </button>";
+                                                        echo"</td>";
+                                                        echo"</tr>";
+                                                    }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </div>

@@ -62,6 +62,33 @@ class DataBase
             return false;
         }
     }
+    public function delIcon($id)
+    {
+        try{
+            $stmt = $this->conn->prepare("DELETE FROM icone WHERE idicone = :id");
+            $stmt->bindValue(":id",$id);
+            $response = $stmt->execute();
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
+    public function locationIcon($id)
+    {
+        try{
+            $stmt = $this->conn->prepare("SELECT url FROM icone WHERE idicone = :id");
+            $stmt->bindValue(":id",$id);
+            $stmt->execute();
+            $response = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
     public function datas()
     {
         try{
@@ -74,7 +101,7 @@ class DataBase
             $response[] = $stmt->fetch(PDO::FETCH_ASSOC);
             $stmt = $this->conn->prepare("SELECT * FROM icone");
             $stmt->execute();
-            $response[] = $stmt->fetch(PDO::FETCH_ASSOC);
+            $response[] = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             return $response;
             

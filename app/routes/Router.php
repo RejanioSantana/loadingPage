@@ -41,6 +41,7 @@ class Router
                 '/admin' => fn() => self::load('AdminController','index'),
                 '/paniel' => fn() => self::load('PanielController','index'),
                 '/adminEdit' => fn() => self::load('admin\\AdminEdit','index'),
+                '/adminEmail' => fn() => self::load('admin\\AdminEmail','index'),
                 '/delIcon' => fn() => self::load('admin\\DelIcon','index'),
                 
             ],

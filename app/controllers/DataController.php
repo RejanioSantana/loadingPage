@@ -69,5 +69,15 @@ class DataController
             Redirect::to('adminEdit');
             exit;
     }
+    public static function capturiesList()
+    {
+        $emailsPorPagina = 1;
+        $paginaAtual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+        $offset = ($paginaAtual - 1) * $emailsPorPagina;
+        $offset = 10;
+        $r = new DataBase();
+        $result = $r->capturies($emailsPorPagina,$offset);
+        return $result;
+    }
 
 }

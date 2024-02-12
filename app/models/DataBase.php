@@ -75,6 +75,19 @@ class DataBase
             return false;
         }
     }
+    public function capturies($maxValue,$offset)
+    {
+        try{
+            $stmt = $this->conn->prepare("SELECT * FROM captured LIMIT $maxValue OFFSET $offset");
+            $stmt->execute();
+            $response = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
     public function locationIcon($id)
     {
         try{

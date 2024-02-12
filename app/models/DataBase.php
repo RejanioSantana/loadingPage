@@ -45,6 +45,28 @@ class DataBase
         }
     }
 
+    public function datas()
+    {
+        try{
+            $response = [];
+            $stmt = $this->conn->prepare("SELECT * FROM data");
+            $stmt->execute();
+            $response[] = $stmt->fetch(PDO::FETCH_ASSOC);
+            $stmt = $this->conn->prepare("SELECT * FROM texts");
+            $stmt->execute();
+            $response[] = $stmt->fetch(PDO::FETCH_ASSOC);
+            $stmt = $this->conn->prepare("SELECT * FROM icone");
+            $stmt->execute();
+            $response[] = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
+
     public function query($sql)
     {
         $stmt = $this->conn->prepare($sql);
@@ -111,8 +133,7 @@ class DataBase
                         $stmt->bindValue(":$index",$value);
                        
                 }
-            }
-                
+            }  
             $stmt->execute();
             return true;
         } catch (Exception  $e) {

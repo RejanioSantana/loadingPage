@@ -7,7 +7,7 @@ class DataController
     public static function datas()
     {
         $bd = new DataBase();
-        $r = $bd->query("SELECT * FROM data");
+        $r = $bd->datas();
         return $r ;
     }
     public static function login($email)
@@ -23,10 +23,10 @@ class DataController
 
         $db = new DataBase();
         $r = $db->updateDatas($array);
-        // if($r){
-        //         header("Location: ./paniel");
-        //         exit;
-        //     };
+        if($r){
+                header("Location: ./paniel");
+                exit;
+            };
     }
     private static function movieFile()
     {

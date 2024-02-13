@@ -75,12 +75,84 @@ class DataBase
             return false;
         }
     }
+    public function fileCapturies()
+    {
+        try{
+            $stmt = $this->conn->prepare("
+            SELECT name,company,email,whatsapp,investment FROM captured");
+            $stmt->execute();
+            $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
+    public function capturiesCountPages()
+    {
+        try{
+            $stmt = $this->conn->prepare("
+            SELECT COUNT(*) AS total_de_paginas FROM captured");
+            $stmt->execute();
+            $response = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
+    public function capturiesCount($emailsPorPagina)
+    {
+        try{
+            $stmt = $this->conn->prepare("
+            SELECT CEIL(COUNT(*) / :num) AS total_de_paginas FROM captured");        
+            $stmt->bindValue(":num",$emailsPorPagina, PDO::PARAM_INT);
+            $stmt->execute();
+            $response = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
+    public function delAllCapturies()
+    {   
+        try{
+        $stmt = $this->conn->prepare("DELETE FROM captured");
+        $stmt->execute();
+        return true;
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
+    
+    public function delCapturies($array)
+    {   
+        try{
+        $stmt = $this->conn->prepare("DELETE FROM captured WHERE idcaptured= :id");
+        foreach($array as $key => $value) {
+            $stmt->execute(array(':id' => $value));
+        
+        }
+        return true;
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    
+    }
     public function capturies($maxValue,$offset)
     {
         try{
-            $stmt = $this->conn->prepare("SELECT * FROM captured LIMIT $maxValue OFFSET $offset");
+            $stmt = $this->conn->prepare("SELECT * FROM captured  LIMIT :maxValue OFFSET :offset ");
+            $stmt->bindValue(":maxValue",$maxValue, PDO::PARAM_INT);
+            $stmt->bindValue(":offset",$offset, PDO::PARAM_INT);
             $stmt->execute();
-            $response = $stmt->fetch(PDO::FETCH_ASSOC);
+            $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $response;
             
         }catch(Exception $e){

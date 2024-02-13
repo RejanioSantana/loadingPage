@@ -43,12 +43,15 @@ class Router
                 '/adminEdit' => fn() => self::load('admin\\AdminEdit','index'),
                 '/adminEmail' => fn() => self::load('admin\\AdminEmail','index'),
                 '/delIcon' => fn() => self::load('admin\\DelIcon','index'),
+                '/delLeads' => fn() => self::load('admin\\AdminEmail','delLeads'),
+                '/exportDatas' => fn() => self::load('admin\\AdminEmail','exportDatas'),
                 
             ],
             'post' => [
                 '/admin' => fn() => self::load('AdminController','store'),
                 '/adminEdit' => fn() => self::load('admin\\AdminEdit','store'),
                 '/uploadIcon' => fn() => self::load('admin\\UploadIcon','store'),
+                '/adminEmail' => fn() => self::load('admin\\AdminEmail','store'),
             ],
             'put' => [
 

@@ -11,9 +11,22 @@ class AdminEmail extends Controller
     {
         SectionControls::section();
         $datas =  DataController::capturiesList();
-        echo "<pre>";
-        var_dump($datas);                                                  
-        echo "</pre>";
-        // $this->view('admin/paniel/adminEmail',['title'=> 'Email','datas' => $datas]);
+        $this->view('admin/paniel/adminEmail',
+        ['title'=> 'Email','datas' => $datas[0],'total_page' => $datas[1]]);
+    }
+    public function store()
+    {
+        SectionControls::section();
+        DataController::delCaptured();
+    }
+    public function delLeads()
+    {
+        SectionControls::section();
+        DataController::delAllCaptured();
+    }
+    public function exportDatas()
+    {
+        SectionControls::section();
+        DataController::fileCaptured();
     }
 }

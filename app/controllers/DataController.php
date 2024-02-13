@@ -71,13 +71,62 @@ class DataController
     }
     public static function capturiesList()
     {
-        $emailsPorPagina = 1;
+        $r = new DataBase();
+        $total_page = $r->capturiesCountPages();
+        $total_page = $total_page["total_de_paginas"] ;
+        $emailsPorPagina = (intval($total_page) > 10) ? 10 : $total_page ;
         $paginaAtual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
         $offset = ($paginaAtual - 1) * $emailsPorPagina;
-        $offset = 10;
-        $r = new DataBase();
         $result = $r->capturies($emailsPorPagina,$offset);
-        return $result;
+        $total_page = (intval($total_page) > 10) ? ceil($total_page/10) : 1 ;
+        return [$result, $total_page];
     }
+    public static function delAllCaptured()
+    {
+        
+        $r = new DataBase();
+        $result= $r->delAllCapturies();
+        if($result){
+            Redirect::to('adminEmail');
+            exit;
+        }
+        Redirect::to('adminEmail');
+        exit;
+        
+    }
+    public static function delCaptured()
+    {
+        if(isset($_POST['mail'])) {
+            $r = new DataBase();
+            $result= $r->delCapturies($_POST['mail']);
+            if($result){
+                Redirect::to('adminEmail');
+                exit;
+            }
+            Redirect::to('adminEmail');
+            exit;
+        }
+    }
+    public static function fileCaptured()
+    {
+        
+            $r = new DataBase();
+            $result= $r->fileCapturies();
+            if($result){
+                header('Content-Type: text/csv; charset=UTF-8');
+                header('Content-Disposition: attachment; filename=arquivo.csv');
+                $arq = fopen("php://output","w");
+                $cabecalho = ['Nome','Empresa','E-mail','Whatapp','Investimento Anual'];
+                fputcsv($arq,$cabecalho,';');
+                foreach($result as $index => $value){
+                    fputcsv($arq,$value,';');
 
+                }
+                fclose($arq);
+                exit;
+            }
+            Redirect::to('adminEmail');
+            exit;
+        
+    }
 }

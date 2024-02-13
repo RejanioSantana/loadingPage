@@ -45,9 +45,12 @@ class Router
                 '/delIcon' => fn() => self::load('admin\\DelIcon','index'),
                 '/delLeads' => fn() => self::load('admin\\AdminEmail','delLeads'),
                 '/exportDatas' => fn() => self::load('admin\\AdminEmail','exportDatas'),
+                '/adminFavicon' => fn() => self::load('admin\\AdminFavicon','index'),
+                '/adminBanner' => fn() => self::load('admin\\AdminBanner','index'),
                 
             ],
             'post' => [
+                '/addFile' => fn() => self::load('admin\\AdminFile','store'),
                 '/admin' => fn() => self::load('AdminController','store'),
                 '/adminEdit' => fn() => self::load('admin\\AdminEdit','store'),
                 '/uploadIcon' => fn() => self::load('admin\\UploadIcon','store'),

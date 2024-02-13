@@ -174,6 +174,36 @@ class DataBase
             return false;
         }
     }
+    public function insertFile($param,$url)
+    {
+        try{
+            $stmt = $this->conn->prepare("
+            UPDATE data SET :param = :url");
+            $stmt->bindValue(":param",$param, PDO::PARAM_STR);
+            $stmt->bindValue(":url",$url, PDO::PARAM_STR);
+            $response = $stmt->execute();
+            
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
+    public function dataParam($param)
+    {
+        try{
+            $stmt = $this->conn->prepare("SELECT :param FROM data");
+            $stmt->bindValue(':param',$param);
+            $stmt->execute();
+            $response= $stmt->fetch(PDO::FETCH_ASSOC);
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
     public function datas()
     {
         try{

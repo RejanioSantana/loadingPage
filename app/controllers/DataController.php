@@ -129,4 +129,47 @@ class DataController
             exit;
         
     }
+    public static function dataParam($param)
+    {
+        $bd = new DataBase();
+        $r = $bd->dataParam($param);
+        return $r ;
+    }
+    public static function addFile()
+    {   
+        if(isset($_FILES["favicon"])){
+            $name = $_FILES["favicon"]["name"];
+            $tmp_name = $_FILES["favicon"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = uniqid() .'.'. $extension;
+            $f = new DataBase();
+            $local = 'assets/img/' . $newName;
+            $result = $f->insertFile('favicon',$local);
+            if($result){
+                move_uploaded_file($tmp_name,'assets/img/' . $newName);
+                Redirect::back();
+                exit;
+            }
+            Redirect::back();
+            exit;
+        }
+        if(isset($_FILES["banner"])){
+            $name = $_FILES["banner"]["name"];
+            $tmp_name = $_FILES["banner"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = uniqid() .'.'. $extension;
+            $f = new DataBase();
+            $local = 'assets/img/' . $newName;
+            $result = $f->insertFile('banner',$local);
+            if($result){
+                move_uploaded_file($tmp_name,'assets/img/' . $newName);
+                Redirect::back();
+                exit;
+            }
+            Redirect::back();
+            exit;
+        }
+        // $bd = new DataBase();
+        // return $r ;
+    }
 }

@@ -34,11 +34,12 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                     <i class="fa fa-laptop modal-icon"></i>
-                                    <h4 class="modal-title">Favicon</h4>
+                                    <h4 class="modal-title">Banner</h4>
                                 </div>
                                 <form action="/addFile" class=".form-2" method="post" enctype="multipart/form-data">
                                 <div class="modal-body">
-                                    <div class="form-group"><label>Selecione o arquivo</label> <input type="file" name="banner"  class="form-control"></div>
+                                    <input type="hidden" name="type" value= "banner">
+                                    <div class="form-group"><label>Selecione o arquivo(Max: 2M)</label> <input type="file" name="banner" accept="image/*" size="2M" class="form-control"></div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-white" data-dismiss="modal">Voltar</button>

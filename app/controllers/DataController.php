@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use app\classes\Redirect;
 use app\models\DataBase;
+use Exception;
 
 class DataController
 {
@@ -144,12 +145,28 @@ class DataController
             $newName = uniqid() .'.'. $extension;
             $f = new DataBase();
             $local = 'assets/img/' . $newName;
-            $result = $f->insertFile('favicon',$local);
-            if($result){
-                move_uploaded_file($tmp_name,'assets/img/' . $newName);
-                Redirect::back();
-                exit;
+            $location = $f->dataParam($_POST['type']);
+            $location = $location['favicon'];
+            try {
+                $r = unlink($location);
+                if($r){
+                    $result = $f->insertFile('favicon',$local);
+                    if($result){
+                        move_uploaded_file($tmp_name,'assets/img/' . $newName);
+                        Redirect::back();
+                        exit;
+                    }
+                }
+            } catch(Exception $e){
+            }finally{
+                $result = $f->insertFile('favicon',$local);
+                    if($result){
+                        move_uploaded_file($tmp_name,'assets/img/' . $newName);
+                        Redirect::back();
+                        exit;
+                    }
             }
+
             Redirect::back();
             exit;
         }
@@ -160,16 +177,31 @@ class DataController
             $newName = uniqid() .'.'. $extension;
             $f = new DataBase();
             $local = 'assets/img/' . $newName;
-            $result = $f->insertFile('banner',$local);
-            if($result){
-                move_uploaded_file($tmp_name,'assets/img/' . $newName);
-                Redirect::back();
-                exit;
+            $location = $f->dataParam($_POST['type']);
+            $location = $location['banner'];
+            try {
+                $r = unlink($location);
+                if($r){
+                    $result = $f->insertFile('banner',$local);
+                    if($result){
+                        move_uploaded_file($tmp_name,'assets/img/' . $newName);
+                        Redirect::back();
+                        exit;
+                    }
+                }
+            } catch(Exception $e){
+                
+            }finally{
+                $result = $f->insertFile('banner',$local);
+                    if($result){
+                        move_uploaded_file($tmp_name,'assets/img/' . $newName);
+                        Redirect::back();
+                        exit;
+                    }
             }
             Redirect::back();
             exit;
         }
-        // $bd = new DataBase();
-        // return $r ;
+        
     }
 }

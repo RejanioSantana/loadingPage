@@ -177,9 +177,14 @@ class DataBase
     public function insertFile($param,$url)
     {
         try{
-            $stmt = $this->conn->prepare("
-            UPDATE data SET :param = :url");
-            $stmt->bindValue(":param",$param, PDO::PARAM_STR);
+            if($param == "favicon"){
+                $stmt = $this->conn->prepare("
+                UPDATE data SET favicon = :url");
+            }
+            if($param == "banner"){
+                $stmt = $this->conn->prepare("
+                UPDATE data SET banner = :url");
+            }
             $stmt->bindValue(":url",$url, PDO::PARAM_STR);
             $response = $stmt->execute();
             
@@ -193,8 +198,12 @@ class DataBase
     public function dataParam($param)
     {
         try{
-            $stmt = $this->conn->prepare("SELECT :param FROM data");
-            $stmt->bindValue(':param',$param);
+            if($param == "favicon"){
+            $stmt = $this->conn->prepare("SELECT favicon FROM data");
+            }
+            if($param == "banner"){
+                $stmt = $this->conn->prepare("SELECT banner FROM data");
+            }
             $stmt->execute();
             $response= $stmt->fetch(PDO::FETCH_ASSOC);
             return $response;

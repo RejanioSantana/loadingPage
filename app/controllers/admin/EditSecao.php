@@ -21,4 +21,14 @@ class EditSecao
         SectionControls::section();
         DataController::updateForm();
     }
+    public function meta()
+    {
+        SectionControls::section();
+        DataController::updateMeta();
+    }
+    public function admin()
+    {
+        SectionControls::section();
+        DataController::updateAdmin();
+    }
 }

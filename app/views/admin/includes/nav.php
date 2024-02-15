@@ -13,13 +13,12 @@
                 AW
             </div>
         </li>
-        <li class="active">
+        <!-- <li class="active">
             <a href="index-2.html"><i class="fa fa-th-large"></i> <span class="nav-label">Geral</span> <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
-                <li><a href="/adminEmail">Email</a></li>
                 <li><a href="/adminEdit">Editar Pagina</a></li>
             </ul>
-        </li>
+        </li> -->
         <li class="active">
             <a href="index-2.html"><i class="fa fa-th-large"></i> <span class="nav-label">Editar Pagina</span> <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
@@ -28,13 +27,14 @@
                 <li><a href="/secaoForm">Formulário</a></li>
             </ul>
         </li>
-        <li><a href=""><i class="fa fa-users"></i><span class="nav-label">Administrador</span></a></li>
+        <li><a href="/adminEmail"><i class="fa fa-send"></i><span class="nav-label">Leads Capturado</span></a></li>
+        <li><a href="/adminAdmin"><i class="fa fa-users"></i><span class="nav-label">Administrador</span></a></li>
         <li class="">
             <a href="index-2.html"><i class="fa fa-cog"></i> <span class="nav-label">Configurações</span> <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li><a href="/adminFavicon">Favicon</a></li>
                 <li><a href="/adminBanner">Banner</a></li>
-                <li><a href="index-2.html">Busca no Google</a></li>
+                <li><a href="/adminGoogle">Busca no Google</a></li>
                 <li><a href="index-2.html">Script</a></li>
             </ul>
         </li>

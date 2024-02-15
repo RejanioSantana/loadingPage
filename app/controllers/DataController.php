@@ -49,6 +49,16 @@ class DataController
                 exit;
             };
     }
+    public static function updateMeta() 
+    {
+        $array = $_POST;
+        $db = new DataBase();
+        $r = $db->updateMeta($array);
+        if($r){
+                Redirect::back();
+                exit;
+            };
+    }
     // Função abaixo absoleta, verificar antes de excluir.
     public static function datasUpadate()
     {
@@ -236,6 +246,43 @@ class DataController
             Redirect::back();
             exit;
         }
+        
+    }
+    public static function updateAdmin()
+    {   
+        if(isset($_FILES["photo"])){
+            $name = $_FILES["photo"]["name"];
+            $tmp_name = $_FILES["photo"]["tmp_name"];
+            $extension = pathinfo($name,PATHINFO_EXTENSION);
+            $newName = uniqid() .'.'. $extension;
+            $f = new DataBase();
+            $local = 'assets/img/' . $newName;
+            $location = $f->dataParam('admin');
+            $location = $location['photo'];
+            try {
+                $r = unlink($location);
+                if($r){
+                    $result = $f->updateAdmin($local,$_POST['name'],$_POST['email']);
+                    if($result){
+                        move_uploaded_file($tmp_name,'assets/img/' . $newName);
+                        Redirect::back();
+                        exit;
+                    }
+                }
+            } catch(Exception $e){
+            }finally{
+                $result = $f->updateAdmin($local,$_POST['name'],$_POST['email']);
+                    if($result){
+                        move_uploaded_file($tmp_name,'assets/img/' . $newName);
+                        Redirect::back();
+                        exit;
+                    }
+            }
+
+        }
+        Redirect::back();
+        exit;
+
         
     }
 }

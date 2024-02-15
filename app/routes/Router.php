@@ -47,9 +47,11 @@ class Router
                 '/exportDatas' => fn() => self::load('admin\\AdminEmail','exportDatas'),
                 '/adminFavicon' => fn() => self::load('admin\\AdminFavicon','index'),
                 '/adminBanner' => fn() => self::load('admin\\AdminBanner','index'),
+                '/adminGoogle' => fn() => self::load('admin\\AdminGoogle','index'),
                 '/secao1' => fn() => self::load('admin\\AdminEdit','secao1'),
                 '/secao2' => fn() => self::load('admin\\AdminEdit','secao2'),
                 '/secaoForm' => fn() => self::load('admin\\AdminEdit','secaoForm'),
+                '/adminAdmin' => fn() => self::load('admin\\AdminAdmin','index'),
                 
             ],
             'post' => [
@@ -61,6 +63,8 @@ class Router
                 '/updateSecao1' => fn() => self::load('admin\\EditSecao','secao1'),
                 '/updateSecao2' => fn() => self::load('admin\\EditSecao','secao2'),
                 '/updateForm' => fn() => self::load('admin\\EditSecao','form'),
+                '/updateMeta' => fn() => self::load('admin\\EditSecao','meta'),
+                '/updateAdmin' => fn() => self::load('admin\\EditSecao','admin'),
             ],
             'put' => [
 

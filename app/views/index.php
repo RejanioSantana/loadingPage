@@ -40,7 +40,8 @@ foreach($datas[2] as $index => $value){
                     <li><span class="iconLosango active">&#x25C6;</span></li>
                     <li><span class="iconLosango">&#x25C6;</span></li>
                 </ul>
-           
+                <?=$datas[0]['title_list']?>
+                <?=$datas[1]['text_li']?>
             </div>
             <div class="content primary">
                 <form action="">
@@ -48,21 +49,21 @@ foreach($datas[2] as $index => $value){
                         <?=$datas[1]['text_form']?>
                     </div>
                     <label for="name">Nome*
-                        <input type="text" name="name" id="name" required>
+                        <input type="text" name="name" id="name" maxlength="60" required>
                     </label>
                     <label for="company">Empresa*
-                        <input type="text" name="company" id="company" required>
+                        <input type="text" name="company" id="company" maxlength="60" required>
                     </label>
                     <div class="input-group">
                         <label for="whatsapp">Whatsapp
-                            <input type="text" name="whatsapp" id="whatsapp" required>
+                            <input type="tel" name="whatsapp" id="whatsapp" maxlength="20" required>
                         </label>
                         <label for="email">E-mail Corporativo
-                            <input type="text" name="email" id="email" required>
+                            <input type="email" name="email" id="email" maxlength="100" required>
                         </label>
                     </div>
                     <label for="investment">Investimento Anual em média
-                        <input type="text" name="investment" id="investment" required>
+                        <input type="text" name="investment" id="investment" maxlength="12" required>
                     </label>
                     <button type="submit"><?=$datas[0]['name_btn_form']?></button>
                 </form>

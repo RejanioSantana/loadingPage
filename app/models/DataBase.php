@@ -174,6 +174,26 @@ class DataBase
             return false;
         }
     }
+    public function updateAdmin($url,$name,$email)
+    {
+        try{
+            
+                $stmt = $this->conn->prepare("
+                UPDATE administrador SET photo = :url, name = :name, 
+                email = :email");
+            
+            $stmt->bindValue(":url",$url, PDO::PARAM_STR);
+            $stmt->bindValue(":name",$name, PDO::PARAM_STR);
+            $stmt->bindValue(":email",$email, PDO::PARAM_STR);
+            $response = $stmt->execute();
+            
+            return $response;
+            
+        }catch(Exception $e){
+            echo($e->getMessage());
+            return false;
+        }
+    }
     public function insertFile($param,$url)
     {
         try{
@@ -203,6 +223,9 @@ class DataBase
             }
             if($param == "banner"){
                 $stmt = $this->conn->prepare("SELECT banner FROM data");
+            }
+            if($param == "admin"){
+                $stmt = $this->conn->prepare("SELECT photo FROM administrador");
             }
             $stmt->execute();
             $response= $stmt->fetch(PDO::FETCH_ASSOC);
@@ -248,6 +271,35 @@ class DataBase
         $stmt->execute($param);
         $resp = $stmt->fetch(PDO::FETCH_ASSOC);
         return $resp;
+    }
+    public function updateMeta($array)
+    {   
+        try
+        {
+            $stmt = $this->conn->prepare(
+                " UPDATE data SET  
+                meta_title = :meta_title, 
+                meta_description = :meta_description, 
+                meta_keywords = :meta_keywords
+                "); 
+                foreach($array as $index => $value){
+                switch ($index) {
+                    case 'meta_title':
+                        $stmt->bindValue(":$index",$value);
+                    case 'meta_description':
+                        $stmt->bindValue(":$index",$value);
+                    case 'meta_keywords':
+                        $stmt->bindValue(":$index",$value);
+                }
+            } 
+            $stmt->execute();
+            
+            return true;
+        } catch (Exception  $e) {
+            echo($e->getMessage());
+            return false;
+        }
+       
     }
     public function updateForm($array)
     {   

@@ -20,6 +20,14 @@
                 <li><a href="/adminEdit">Editar Pagina</a></li>
             </ul>
         </li>
+        <li class="active">
+            <a href="index-2.html"><i class="fa fa-th-large"></i> <span class="nav-label">Editar Pagina</span> <span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li><a href="/secao1">Seção 1</a></li>
+                <li><a href="/secao2">Seção 2</a></li>
+                <li><a href="/secaoForm">Formulário</a></li>
+            </ul>
+        </li>
         <li><a href=""><i class="fa fa-users"></i><span class="nav-label">Administrador</span></a></li>
         <li class="">
             <a href="index-2.html"><i class="fa fa-cog"></i> <span class="nav-label">Configurações</span> <span class="fa arrow"></span></a>

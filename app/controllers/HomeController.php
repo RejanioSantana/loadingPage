@@ -4,6 +4,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $this->view('index',['title' => 'BetQ']);
+        $datas = DataController::datas();
+        $this->view('index',['title' => 'Ampliva','datas'=>$datas]);
     }
 }

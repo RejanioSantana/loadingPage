@@ -249,6 +249,116 @@ class DataBase
         $resp = $stmt->fetch(PDO::FETCH_ASSOC);
         return $resp;
     }
+    public function updateForm($array)
+    {   
+        try
+        {
+            $stmt = $this->conn->prepare(
+                " UPDATE data SET  
+                name_btn_form = :name_btn_form, 
+                link_form = :url_btn_form
+                "); 
+                foreach($array as $index => $value){
+                switch ($index) {
+                    case 'name_btn_form':
+                        $stmt->bindValue(":$index",$value);
+                    case 'url_btn_form':
+                        $stmt->bindValue(":$index",$value);
+                }
+            } 
+            $stmt->execute();
+            $stmt = $this->conn->prepare(
+                "UPDATE texts SET text_form = :form_desc ");
+                
+            foreach($array as $index => $value){
+                switch ($index) {
+                    case 'form_desc':
+                        $stmt->bindValue(":$index",$value);
+                }
+            } 
+            $stmt->execute();
+            return true;
+        } catch (Exception  $e) {
+            echo($e->getMessage());
+            return false;
+        }
+       
+    }
+    public function updateSecao2($array)
+    {   
+        try
+        {
+            $stmt = $this->conn->prepare(
+                " UPDATE data SET  
+                name_btn_one = :name_btn_one, 
+                link_btn_one = :url_btn_one, 
+                name_btn_two = :name_btn_two,
+                link_btn_two = :url_btn_two
+                "); 
+                foreach($array as $index => $value){
+                switch ($index) {
+                    case 'name_btn_one':
+                        $stmt->bindValue(":$index",$value);
+                    case 'url_btn_one':
+                        $stmt->bindValue(":$index",$value);
+                    case 'name_btn_two':
+                        $stmt->bindValue(":$index",$value);
+                    case 'url_btn_two':
+                        $stmt->bindValue(":$index",$value);
+                }
+            } 
+            $stmt->execute();
+            $stmt = $this->conn->prepare(
+                "UPDATE texts SET text_two = :description2 ");
+                
+            foreach($array as $index => $value){
+                switch ($index) {
+                    case 'description2':
+                        $stmt->bindValue(":$index",$value);
+                }
+            } 
+            $stmt->execute();
+            return true;
+        } catch (Exception  $e) {
+            echo($e->getMessage());
+            return false;
+        }
+       
+    }
+    public function updateSecao1($array)
+    {   
+        try
+        {
+            $stmt = $this->conn->prepare(
+                " UPDATE data SET 
+                title_list = :title_list
+                "); 
+                foreach($array as $index => $value){
+                switch ($index) {
+                    case 'title_list':
+                        $stmt->bindValue(":$index",$value);
+                }
+            }
+            $stmt->execute();
+            $stmt = $this->conn->prepare(
+                "UPDATE texts SET 
+                text_li = :itensList
+                ");
+                
+            foreach($array as $index => $value){
+                switch ($index) {
+                    case 'itensList':
+                        $stmt->bindValue(":$index",$value);  
+                }
+            }  
+            $stmt->execute();
+            return true;
+        } catch (Exception  $e) {
+            echo($e->getMessage());
+            return false;
+        }
+       
+    }
     public function updateDatas($array)
     {   
         try
@@ -263,7 +373,8 @@ class DataBase
                 name_btn_two = :name_btn_two,
                 link_btn_two = :url_btn_two, 
                 name_btn_form = :name_btn_form, 
-                link_form = :url_btn_form
+                link_form = :url_btn_form,
+                title_list = :title_list
                 "); 
                 foreach($array as $index => $value){
                 switch ($index) {
@@ -285,19 +396,29 @@ class DataBase
                         $stmt->bindValue(":$index",$value);
                     case 'url_btn_form':
                         $stmt->bindValue(":$index",$value);
+                    case 'title_list':
+                        $stmt->bindValue(":$index",$value);
                        
                 }
             }
             $stmt->execute();
             $stmt = $this->conn->prepare(
-                "UPDATE texts SET text_one = :description1, text_two = :description2, text_form = :form_description");
+                "UPDATE texts SET 
+                text_one = :description1, 
+                text_two = :description2, 
+                text_form = :form_desc, 
+                text_li = :itensList
+                ");
+                
             foreach($array as $index => $value){
                 switch ($index) {
                     case 'description1':
                         $stmt->bindValue(":$index",$value);
+                    case 'form_desc':
+                        $stmt->bindValue(":form_desc",$value);
                     case 'description2':
                         $stmt->bindValue(":$index",$value);
-                    case 'form_description':
+                    case 'itensList':
                         $stmt->bindValue(":$index",$value);
                        
                 }

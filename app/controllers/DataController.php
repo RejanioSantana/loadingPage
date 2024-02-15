@@ -19,9 +19,43 @@ class DataController
         $datas =  $bd->datasAdmin($email);
         return $datas;
     }
+    public static function updateSecao1() 
+    {
+        $array = $_POST;
+        $db = new DataBase();
+        $r = $db->updateSecao1($array);
+        if($r){
+                Redirect::to('secao1');
+                exit;
+            };
+    }
+    public static function updateSecao2() 
+    {
+        $array = $_POST;
+        $db = new DataBase();
+        $r = $db->updateSecao2($array);
+        if($r){
+                Redirect::to('secao2');
+                exit;
+            };
+    }
+    public static function updateForm() 
+    {
+        $array = $_POST;
+        $db = new DataBase();
+        $r = $db->updateForm($array);
+        if($r){
+                Redirect::back();
+                exit;
+            };
+    }
+    // Função abaixo absoleta, verificar antes de excluir.
     public static function datasUpadate()
     {
         $array = $_POST;
+        echo"<pre>";
+        var_dump($_POST);
+        echo"</pre>";
         $db = new DataBase();
         $r = $db->updateDatas($array);
         if($r){
@@ -45,7 +79,7 @@ class DataController
             $result = $f->insertIcon($local,$description_icone);
             if($result){
                 move_uploaded_file($tmp_name,'assets/img/' . $newName);
-                Redirect::to('adminEdit');
+                Redirect::back();
                 exit;
             }
             Redirect::to('adminEdit');
@@ -62,7 +96,7 @@ class DataController
                 if($result){
                     $result = $f->delIcon($id);
                     if($result){
-                        Redirect::to('adminEdit');
+                        Redirect::back();
                         exit;
                     }
                 }

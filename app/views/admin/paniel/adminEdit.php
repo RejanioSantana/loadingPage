@@ -34,6 +34,16 @@
                                                     </textarea>
                                                 </div>
                                             </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Título Lista:</label>
+                                                <div class="col-sm-10"><input type="text" name="title_list" class="form-control" value="<?=$datas[0]['title_list']?>" placeholder="Lorem, Ipsum, has, been"></div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Itens Lista 1:</label>
+                                                <div class="col-sm-10">
+                                                    <textarea name="itensList" class="summernote">
+                                                    <?=$datas[1]['text_li']?>
+                                                    </textarea>
+                                                </div>
+                                            </div>
                                             
                                         </fieldset>
                                         <hr>
@@ -65,10 +75,9 @@
                                     <div class="panel-body">
 
                                         <fieldset class="form-horizontal">
-                                        <div class="form-group"><label class="col-sm-2 control-label">Descrição:</label>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Descrição:</label>
                                                 <div class="col-sm-10">
-                                                    <textarea name="form_description" class="summernote">
-                                                    <?=$datas[1]['text_form']?>
+                                                <textarea name="form_desc" class="summernote">
                                                     </textarea>
                                                 </div>
                                             </div>
@@ -157,5 +166,5 @@
                     </div>
                 </div>
             
-
+            </div>
             </div>
